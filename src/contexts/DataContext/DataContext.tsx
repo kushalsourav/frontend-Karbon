@@ -1,8 +1,16 @@
 import { createContext, useContext, useReducer } from "react";
 import DataReducer from "../../reducers/DataReducer/DataReducer";
 
-const initialDataState = {
-    data: {}
+type initialState = {
+    data: Object | null,
+    file: String | null,
+    error: String
+}
+
+const initialDataState : initialState = {
+    data: {},
+    file: '',
+    error: ''
 }
 
 const DataContext = createContext({});
