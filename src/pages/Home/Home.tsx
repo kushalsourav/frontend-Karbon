@@ -5,7 +5,7 @@ import { useData } from '../../contexts/DataContext/DataContext';
 const Home = () => {
     const [file, setFile] = useState("");
     const navigate = useNavigate()
-    const {data, setData} : any = useData()
+    const { setData} : any = useData()
 
     const formData = new FormData()
     formData.append('file', file);
