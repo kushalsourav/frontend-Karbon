@@ -44,8 +44,11 @@ button {
   left: 50%;
   transform: translate(-50%,-50%);
   width: 400px;
-}
 
+}
+.rules-list::before{
+    position: relative;
+}
 h4 {
     text-align: center;
     font-size: 40px;
@@ -60,4 +63,10 @@ li {
     padding: 10px 0;
     margin: 0 auto;
     width: fit-content;
+}
+
+.back-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
 }

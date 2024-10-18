@@ -6,21 +6,28 @@ import "./Home.css"
 
 const Home = () => {
     const [file, setFile] = useState("");
+
     const navigate = useNavigate()
+
     const { setData }: any = useData()
 
     const formData = new FormData()
     formData.append('file', file);
-    const postData = async (data: any) => {
 
-        const response = await axios.post('http://127.0.0.1:5000/upload', data);
-        console.log('Response:', response.data);
+
+    const postData = async (data: any, setData: any) => {
+        const response = await axios.post('https://backend-karbon.onrender.com/upload', data);
         if (response.status === 200) {
             navigate('/rules')
+        }
+        else {
+
         }
         setData({ type: "FLAG", flag: response.data.flags })
         return response
     }
+
+
     return (
         <div className='home'>
      
@@ -31,7 +38,7 @@ const Home = () => {
                     }} />
                     <button onClick={(e) => {
                         e.preventDefault()
-                        postData(formData)
+                        postData(formData, setData)
                     }}>Submit</button>
                 </form>
            

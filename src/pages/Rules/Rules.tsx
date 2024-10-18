@@ -1,5 +1,6 @@
 import React from 'react';
 import { useData } from '../../contexts/DataContext/DataContext';
+import { Link } from 'react-router-dom';
 
 
 const Rules = () => {
@@ -15,8 +16,9 @@ const Rules = () => {
                 <li>ISCR FLAG: {ISCR_FLAG}</li>
                 <li>TOTAL REVENUE 5CR FLAG: {TOTAL_REVENUE_5CR_FLAG}</li>
             </ul>
+            <Link to={'/'}><button className='back-btn'>back</button></Link>
             </div>
-
+     
         </div>
     );
 }
